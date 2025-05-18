@@ -27,6 +27,6 @@ class Expense(Base):
     category = Column(String)
     date = Column(DateTime, default=datetime.utcnow)
     
-    owner_id = Column(Integer, ForeignKey("users.id"))
+    owner_id = Column(Integer, ForeignKey("user.id")) #Cambio de users.id a user.id 
     
     owner = relationship("User", back_populates="expenses")
